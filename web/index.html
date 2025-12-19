@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>숫자 맞추기 게임 — 깔쌈한 웹 버전</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="card">
+        <header class="card-header">
+          <h1>숫자 맞추기 🎯</h1>
+          <p class="subtitle">1에서 50 또는 100 사이의 숫자를 맞혀보세요 — 깔쌈한 웹 UI</p>
+        </header>
+
+        <section class="controls">
+          <label for="rangeSelect">범위: </label>
+          <select id="rangeSelect">
+            <option value="50">1 — 50</option>
+            <option value="100" selected>1 — 100</option>
+            <option value="200">1 — 200</option>
+          </select>
+
+          <button id="newGame">새 게임</button>
+        </section>
+
+        <section class="game">
+          <div class="hint-area" aria-live="polite">게임을 시작하려면 범위를 선택하고 '새 게임'을 눌러주세요.</div>
+
+          <div class="input-row">
+            <input id="guessInput" type="number" placeholder="숫자 입력" min="1" />
+            <button id="checkBtn">입력</button>
+          </div>
+
+          <div class="meta">시도: <span id="attempts">0</span></div>
+        </section>
+
+        <footer class="card-footer">
+          <small>Esc로 입력 초기화 · R로 새게임 · 웹 버전 · vibecode</small>
+        </footer>
+      </div>
+
+      <div id="confetti" class="confetti" aria-hidden="true"></div>
+
+      <!-- Cat dance overlay shown on win -->
+      <div id="catDance" class="cat-dance" aria-hidden="true">
+        <div class="cat-wrapper">
+          <div class="cat">😺</div>
+          <div class="cat-text">축하합니다!</div>
+        </div>
+        <button id="closeCat" class="close-cat" aria-label="춤 종료">✕</button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
